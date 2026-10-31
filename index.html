@@ -1,0 +1,507 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>صوتك بس لورد موسى</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: phone-first campaign page. Full-bleed photo hero, crossing tapes, a swipe rail, a sticky card stack, a word-by-word pledge, a tap-to-check ballot, and a floating section dock. */
+:root{
+  color-scheme: dark;
+  --bg:#0A2656;
+  --bg-deep:#071C42;
+  --fg:#FFFFFF;
+  --muted:#E6EEFB;
+  --soft:#C9D8F0;
+  --acc:#FFC93C;
+  --ink:#0A2656;
+  --glass:rgba(255,255,255,.08);
+  --line:rgba(255,255,255,.22);
+  --card-1:#12356F;
+  --card-2:#173F82;
+  --card-3:#1C4A96;
+  --display:'Cairo','Segoe UI',Tahoma,sans-serif;
+  --body:'Tajawal','Segoe UI',Tahoma,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18px;direction:rtl;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--bg-deep)}
+*{box-sizing:border-box}
+a{text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;border:0;background:none;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:8px}
+.g{padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+
+/* progress + header */
+.prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:4px;z-index:45;background:var(--acc);transform-origin:right center;transform:scaleX(0)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(7,28,66,.86);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:transform .45s var(--ease)}
+.bar.hide{transform:translateY(-110%)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:50%;background:#fff;border:3px solid var(--acc);display:flex;align-items:center;justify-content:center;flex:none}
+.logo img{width:38px;height:38px;object-fit:contain;border-radius:50%}
+.brand b{font-family:var(--display);font-weight:900;font-size:21px}
+.links{display:none;align-items:center;gap:30px;font-family:var(--display);font-weight:700;font-size:18px;color:var(--muted)}
+.lnk{position:relative;padding:10px 2px;transition:color .3s}
+.lnk::after{content:"";position:absolute;right:0;left:0;bottom:2px;height:3px;border-radius:2px;background:var(--acc);transform:scaleX(0);transform-origin:right center;transition:transform .35s var(--ease)}
+.lnk:hover{color:var(--acc)}
+.lnk:hover::after{transform:scaleX(1)}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 30px;border-radius:999px;font-family:var(--display);font-weight:800;font-size:19px;transition:transform .3s var(--ease),box-shadow .3s}
+.btn:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 16px 34px rgba(0,0,0,.4)}
+.btn:active{transform:scale(.95)}
+.btn-fill{background:var(--acc);color:var(--ink)}
+.btn-line{border:2px solid var(--fg);color:var(--fg)}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rip .7s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);padding-bottom:72px}
+.rings{position:absolute;top:-240px;left:-300px;pointer-events:none;animation:spin 70s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-photo{order:-1;position:relative;animation:pop 1s var(--ease) both}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(24px)}to{opacity:1;transform:none}}
+.frame{position:relative;overflow:hidden;border-radius:0 0 42px 42px}
+.frame img{display:block;width:100%;height:auto;max-width:none;transform:translate3d(0,calc(var(--sy,0) * .16px),0) scale(1.08);transform-origin:center top;will-change:transform}
+.fade{position:absolute;left:0;right:0;bottom:0;height:52%;background:linear-gradient(180deg,rgba(10,38,86,0),var(--bg))}
+.stamp{position:absolute;top:22px;left:max(18px,env(safe-area-inset-left,0px));width:112px;height:112px;transform:rotate(calc(var(--sy,0) * .22deg - 12deg))}
+.stamp-in{position:relative;width:100%;height:100%;border-radius:50%;background:var(--acc);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(0,0,0,.4);animation:pulse 2.6s ease-in-out infinite}
+.stamp-in::before{content:"";position:absolute;inset:7px;border-radius:50%;border:3px dashed var(--ink)}
+.stamp-in span{font-family:var(--display);font-weight:900;font-size:28px;line-height:1}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.hero-text{position:relative;z-index:2;margin-top:-96px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.chip{display:inline-block;padding:9px 22px;border-radius:999px;background:var(--acc);color:var(--ink);font-family:var(--display);font-weight:800;font-size:19px;animation:up .8s .1s var(--ease) both}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+h1{margin:0;display:flex;flex-direction:column;align-items:flex-start;font-family:var(--display);font-weight:900}
+.mask{display:block;overflow:hidden;padding-block:.08em}
+.mask>span{display:block;animation:rise .9s var(--ease) both}
+@keyframes rise{from{transform:translateY(112%)}to{transform:none}}
+.l1{font-size:clamp(54px,15vw,112px);line-height:1.1}
+.l2{font-size:clamp(72px,20vw,168px);line-height:1.05;color:var(--acc)}
+.dot{display:inline-block;width:.22em;height:.22em;border-radius:50%;background:#fff;margin-inline-start:.1em}
+.rule{width:min(100%,440px);height:7px;border-radius:4px;background:#fff;transform-origin:right center;animation:grow 1.1s .8s var(--ease) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.tag{margin:0;max-width:520px;font-size:25px;line-height:1.6;font-weight:500;color:var(--muted);animation:up .8s .7s var(--ease) both}
+.cta{display:flex;flex-wrap:wrap;gap:12px;animation:up .8s .9s var(--ease) both}
+.bits i{position:absolute;border-radius:50%;background:var(--acc);opacity:.5;animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+
+/* tapes */
+.tapes{position:relative;height:176px;overflow:hidden}
+.tape{position:absolute;left:-8%;width:116%;overflow:hidden}
+.tape.a{top:22px;background:var(--acc);color:var(--ink);border-block:5px solid #fff;transform:rotate(-3deg)}
+.tape.b{top:78px;background:#fff;color:var(--ink);transform:rotate(2.5deg)}
+.run{display:flex;width:max-content;padding:12px 0;font-family:var(--display);font-weight:900;font-size:30px;white-space:nowrap}
+.run span{padding:0 24px}
+.run.f{animation:marq 30s linear infinite}
+.run.r{animation:marq 34s linear infinite reverse}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(50%)}}
+
+/* sections */
+.sec{display:flex;flex-direction:column;gap:30px;padding-block:72px;max-width:1280px;margin-inline:auto}
+.eyebrow{font-family:var(--display);font-weight:800;font-size:19px;color:var(--acc)}
+h2{margin:0;font-family:var(--display);font-weight:900;font-size:clamp(40px,11vw,68px);line-height:1.15;text-wrap:balance}
+.head{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.ul{height:6px;width:96px;border-radius:3px;background:var(--acc);transform-origin:right center;transition:transform .9s .2s var(--ease)}
+.pre .ul{transform:scaleX(0)}
+
+/* reveal system (visible by default; script hides only what is below the fold) */
+[data-r]{transition:opacity .85s var(--ease) var(--d,0s),transform .85s var(--ease) var(--d,0s)}
+.pre{opacity:0}
+.pre[data-r=up]{transform:translateY(64px)}
+.pre[data-r=l]{transform:translateX(-80px) rotate(-3deg)}
+.pre[data-r=r]{transform:translateX(80px) rotate(3deg)}
+.pre[data-r=zoom]{transform:scale(.86) rotate(-3deg)}
+
+/* about rail */
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 14px;margin-inline:calc(-1 * max(22px,env(safe-area-inset-left,0px)));padding-inline:max(22px,env(safe-area-inset-left,0px));scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.fact{flex:0 0 78%;scroll-snap-align:center;display:flex;flex-direction:column;gap:10px;padding:30px 26px;min-height:190px;border-radius:28px;background:var(--glass);border:1px solid var(--line);transform:scale(var(--s,1));transition:transform .25s ease-out,border-color .3s,background .3s}
+.fact small{font-size:19px;font-weight:700;color:var(--soft)}
+.fact strong{font-family:var(--display);font-weight:900;font-size:40px;line-height:1.2}
+.fact:active{border-color:var(--acc);background:rgba(255,255,255,.14)}
+.dots{display:flex;gap:8px}
+.dots i{width:10px;height:10px;border-radius:5px;background:var(--line);transition:width .35s var(--ease),background .35s}
+.dots i.on{width:30px;background:var(--acc)}
+
+/* plan: sticky stack */
+.stack{display:flex;flex-direction:column;gap:22px}
+.pcard{position:sticky;top:calc(env(safe-area-inset-top,0px) + 86px + var(--i) * 16px);display:flex;flex-direction:column;gap:12px;padding:28px 24px 32px;min-height:250px;border-radius:30px;border:1px solid var(--line);box-shadow:0 -18px 40px rgba(0,0,0,.28)}
+.pcard:nth-child(1){--i:0;background:var(--card-1)}
+.pcard:nth-child(2){--i:1;background:var(--card-2)}
+.pcard:nth-child(3){--i:2;background:var(--card-3)}
+.num{display:flex;align-items:center;justify-content:center;width:68px;height:68px;border-radius:22px;background:var(--acc);color:var(--ink);font-family:var(--display);font-weight:900;font-size:40px;line-height:1;transform:rotate(-6deg)}
+.pcard h3{margin:0;font-family:var(--display);font-weight:800;font-size:30px;line-height:1.3}
+.pcard p{margin:0;font-size:21px;line-height:1.75;font-weight:500;color:var(--muted)}
+
+/* pledge */
+.pledge{padding-top:20px;padding-bottom:90px;display:flex;flex-direction:column;gap:20px;max-width:1280px;margin-inline:auto}
+.q{font-family:var(--display);font-weight:900;font-size:120px;line-height:.7;height:58px;color:var(--acc);animation:floaty 5s ease-in-out infinite}
+.pl{margin:0;font-size:25px;line-height:2;font-weight:700}
+.pl .w{transition:color .35s,opacity .35s}
+.words .w{opacity:.28}
+.words .w.lit{opacity:1}
+.sig{font-family:var(--display);font-weight:900;font-size:26px;color:var(--acc)}
+
+/* vote */
+.votebox{position:relative;overflow:hidden;background:var(--acc);color:var(--ink);padding-block:84px}
+.vote-in{position:relative;display:flex;flex-direction:column;gap:40px;max-width:1280px;margin-inline:auto}
+.vote-rings{position:absolute;pointer-events:none;animation:spin 80s linear infinite}
+.vote-h{margin:0;font-family:var(--display);font-weight:900;font-size:clamp(52px,15vw,88px);line-height:1.08}
+.vote-t{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.vote-t p{margin:0;font-size:25px;line-height:1.6;font-weight:700}
+.date{display:inline-block;padding:10px 24px;border-radius:999px;background:var(--ink);color:#fff;font-family:var(--display);font-weight:800;font-size:19px}
+.ballot{position:relative;display:flex;align-items:center;gap:20px;width:100%;padding:26px 24px;border-radius:28px;background:#fff;color:var(--ink);text-align:right;box-shadow:0 26px 50px rgba(0,0,0,.3);transform:rotate(-2deg);transition:transform .45s var(--ease)}
+.ballot:hover{transform:rotate(0)}
+.ballot:active{transform:rotate(0) scale(.97)}
+.ballot svg{flex:none}
+.check{stroke-dasharray:60;stroke-dashoffset:60;transition:stroke-dashoffset .6s var(--ease)}
+.ballot[aria-pressed=true] .check{stroke-dashoffset:0}
+.ballot[aria-pressed=true] .box{animation:boxpop .5s var(--ease)}
+@keyframes boxpop{0%{transform:scale(1)}40%{transform:scale(1.18) rotate(-6deg)}100%{transform:scale(1)}}
+.box{transform-origin:32px 32px}
+.bn{font-family:var(--display);font-weight:900;font-size:42px;line-height:1.2;display:block}
+.bs{font-size:21px;font-weight:700;color:#35517F;display:block}
+.hint{margin-top:6px;font-size:18px;font-weight:700;color:#35517F;display:block}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.confetti i{position:absolute;width:12px;height:12px;border-radius:50%}
+
+/* footer + dock */
+.foot{background:var(--bg-deep);padding-block:34px calc(110px + env(safe-area-inset-bottom,0px))}
+.foot-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;max-width:1280px;margin-inline:auto}
+.foot b{display:block;font-family:var(--display);font-weight:800;font-size:18px}
+.foot em{display:block;font-style:normal;font-family:var(--display);font-weight:900;font-size:18px;color:var(--acc)}
+.totop{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--acc);transition:transform .3s}
+.totop:active{transform:scale(.9)}
+.dock{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:35;display:flex;gap:4px;padding:6px;border-radius:999px;background:rgba(7,28,66,.88);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.45);transform:translate(-50%,160%);transition:transform .55s var(--ease)}
+.dock.show{transform:translate(-50%,0)}
+.dock a{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border-radius:999px;font-family:var(--display);font-weight:800;font-size:17px;color:var(--muted);transition:background .35s var(--ease),color .35s}
+.dock a.on{background:var(--acc);color:var(--ink)}
+.dock svg{flex:none}
+
+@media (min-width:900px){
+  body{font-size:20px}
+  .links{display:flex}
+  .dock{display:none}
+  .foot{padding-block:34px}
+  .hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;padding-block:76px 100px;align-items:center}
+  .hero-photo{order:0;max-width:560px;width:100%;margin-inline:auto}
+  .frame{border-radius:30px;border:5px solid var(--acc);transform:rotate(2.5deg);box-shadow:18px 18px 0 rgba(255,255,255,.12),0 30px 60px rgba(0,0,0,.45);transition:transform .6s var(--ease)}
+  .frame:hover{transform:rotate(0) scale(1.02)}
+  .fade{display:none}
+  .hero-text{margin-top:0}
+  .stamp{top:-34px;left:-30px;width:132px;height:132px}
+  .sec{padding-block:112px}
+  .rail{overflow:visible;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-inline:0;padding-inline:0}
+  .fact{flex:none}
+  .dots{display:none}
+  .stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .pcard{position:static;background:var(--glass)!important;transition:transform .4s var(--ease),border-color .4s}
+  .pcard:hover{transform:translateY(-10px);border-color:var(--acc)}
+  .pl{font-size:34px}
+  .votebox{padding-block:110px}
+  .vote-in{flex-direction:row;align-items:center;justify-content:center}
+  .vote-t{flex:1 1 380px}
+  .ballot{flex:0 1 460px;width:auto;padding:30px 34px;gap:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .check{stroke-dashoffset:0}
+}
+</style>
+
+<div id="app" dir="rtl">
+<div class="prog" id="prog"></div>
+
+<header class="bar" id="bar">
+  <div class="bar-in g">
+    <a class="brand" href="#top" aria-label="العودة للأعلى">
+      <span class="logo"><img src="logo.png" alt="شعار مدرسة ابن سينا الإعدادية"></span>
+      <b>لورد موسى</b>
+    </a>
+    <nav class="links" aria-label="الأقسام">
+      <a class="lnk" href="#about">عني</a>
+      <a class="lnk" href="#plan">برنامجي</a>
+    </nav>
+    <a class="btn btn-fill" href="#vote" style="min-height:44px;padding:0 24px">صوّت</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <svg class="rings" width="760" height="760" viewBox="0 0 760 760" aria-hidden="true">
+    <circle cx="380" cy="380" r="200" fill="none" stroke="#FFC93C" stroke-opacity=".22" stroke-width="3" stroke-dasharray="6 14"/>
+    <circle cx="380" cy="380" r="290" fill="none" stroke="#FFFFFF" stroke-opacity=".10" stroke-width="3"/>
+    <circle cx="380" cy="380" r="370" fill="none" stroke="#FFC93C" stroke-opacity=".12" stroke-width="3" stroke-dasharray="2 18"/>
+  </svg>
+  <div class="bits" aria-hidden="true">
+    <i style="width:14px;height:14px;top:640px;right:8%;animation-delay:.2s"></i>
+    <i style="width:9px;height:9px;top:700px;right:36%;animation-delay:1.4s"></i>
+    <i style="width:12px;height:12px;top:620px;left:10%;animation-delay:2.2s"></i>
+  </div>
+
+  <div class="hero-photo">
+    <div class="frame">
+      <img src="photo.jpg" width="1000" height="1333" alt="لورد موسى واقف في المنتصف وزملاؤه يشيرون نحوه بأصابعهم">
+      <div class="fade"></div>
+    </div>
+    <div class="stamp" aria-hidden="true">
+      <div class="stamp-in">
+        <svg width="36" height="36" viewBox="0 0 64 64"><path d="M12 34 L26 48 L53 17" fill="none" stroke="#0A2656" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>صوّت</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-text g">
+    <span class="chip">الصف التاسع ج</span>
+    <h1>
+      <span class="mask l1"><span style="animation-delay:.2s">صوتك بس</span></span>
+      <span class="mask l2"><span style="animation-delay:.4s">لورد موسى<span class="dot"></span></span></span>
+    </h1>
+    <div class="rule"></div>
+    <p class="tag">الكل بيأشر عليه، وانت كمان اختار صح.</p>
+    <div class="cta">
+      <a class="btn btn-fill" href="#plan">شوف برنامجي</a>
+      <a class="btn btn-line" href="#about">مين ورد موسى؟</a>
+    </div>
+  </div>
+</section>
+
+<div class="tapes" aria-hidden="true">
+  <div class="tape a"><div class="run f">
+    <span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span>
+    <span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span><span>صوتك بس لورد موسى ●</span>
+  </div></div>
+  <div class="tape b"><div class="run r">
+    <span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span>
+    <span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span><span>اختار صح ● اختار لورد موسى ●</span>
+  </div></div>
+</div>
+
+<section id="about" class="sec g">
+  <div class="head" data-r="up">
+    <span class="eyebrow">تعرّف عليه</span>
+    <h2>مين لورد موسى؟</h2>
+    <div class="ul"></div>
+  </div>
+  <div class="rail" id="rail">
+    <div class="fact"><small>الاسم</small><strong>ورد موسى</strong></div>
+    <div class="fact"><small>الصف</small><strong>التاسع ج</strong></div>
+    <div class="fact"><small>المدرسة</small><strong>ابن سينا الإعدادية</strong></div>
+  </div>
+  <div class="dots" id="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+</section>
+
+<section id="plan" class="sec g" style="padding-bottom:40px">
+  <div class="head" data-r="up">
+    <span class="eyebrow">شو بدي أعمل</span>
+    <h2>برنامجي</h2>
+    <div class="ul"></div>
+  </div>
+  <div class="stack">
+    <article class="pcard">
+      <span class="num">١</span>
+      <h3>صوتكم أولويتي</h3>
+      <p>متابعة مشاكلكم، والاستماع لآرائكم، والعمل على إيصال أصواتكم ومطالبكم للإدارة.</p>
+    </article>
+    <article class="pcard">
+      <span class="num">٢</span>
+      <h3>مدرستنا أجمل</h3>
+      <p>اسعى لتطوير مرافق المدرسة، وتحسين بيئتها لتكون أكثر راحة ونظافة وجمالاً للجميع.</p>
+    </article>
+    <article class="pcard">
+      <span class="num">٣</span>
+      <h3>مدرستنا تنبض بالحياة</h3>
+      <p>تنظيم مسابقات ممتعة، وفعاليات مميزة، ورحلات وأنشطة تجمعنا وتصنع ذكريات جميلة.</p>
+    </article>
+  </div>
+</section>
+
+<section class="pledge g">
+  <span class="q" aria-hidden="true">”</span>
+  <p class="pl" id="pl">أنا لا أعدكم بأنني سأحقق كل شيء، ولا أريد أن أقدم لكم وعودًا لا أستطيع ضمانها، لكن أعدكم بأن أبذل قصارى جهدي، وأن أسعى بكل إخلاص لتطبيق هذه الأفكار وتحقيق مطالبكم. سأكون صوتكم، وسأعمل من أجلكم، ولن أتوقف عن المحاولة ما دمت أستطيع إحداث فرق.</p>
+  <span class="sig" data-r="l">— لورد موسى</span>
+</section>
+
+<section id="vote" class="votebox">
+  <svg class="vote-rings" width="640" height="640" viewBox="0 0 640 640" aria-hidden="true" style="top:-220px;right:-240px">
+    <circle cx="320" cy="320" r="200" fill="none" stroke="#0A2656" stroke-opacity=".18" stroke-width="3" stroke-dasharray="6 14"/>
+    <circle cx="320" cy="320" r="290" fill="none" stroke="#0A2656" stroke-opacity=".12" stroke-width="3"/>
+  </svg>
+  <div class="vote-in g">
+    <div class="vote-t" data-r="up">
+      <h2 class="vote-h">صوتك بس<br>لورد موسى</h2>
+      <p>ضع علامة صح بجانب اسمه.</p>
+      <span class="date">[تاريخ الانتخابات]</span>
+    </div>
+    <button class="ballot" id="ballot" type="button" aria-pressed="false" data-r="zoom">
+      <svg width="80" height="80" viewBox="0 0 64 64" aria-hidden="true">
+        <g class="box"><rect x="4" y="4" width="56" height="56" rx="12" fill="#FFC93C" stroke="#0A2656" stroke-width="4"/>
+        <path class="check" d="M18 33 L28 43 L47 22" fill="none" stroke="#0A2656" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g>
+      </svg>
+      <span>
+        <span class="bn">لورد موسى</span>
+        <span class="bs">الصف التاسع ج</span>
+        <span class="hint" id="hint">اضغط وحط علامة الصح</span>
+      </span>
+    </button>
+  </div>
+</section>
+</main>
+
+<footer class="foot g">
+  <div class="foot-in">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="logo" style="width:46px;height:46px;border:0"><img src="logo.png" alt="" style="width:38px;height:38px"></span>
+      <span><b>مدرسة ابن سينا الإعدادية</b><em>صوتك بس لورد موسى</em></span>
+    </div>
+    <a class="totop" href="#top" aria-label="العودة للأعلى">
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19 V5 M5 12 L12 5 L19 12" fill="none" stroke="#0A2656" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</footer>
+
+<nav class="dock" id="dock" aria-label="التنقل بين الأقسام">
+  <a href="#about" data-s="about">
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M4 21c1-4.5 4-6 8-6s7 1.5 8 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    عني
+  </a>
+  <a href="#plan" data-s="plan">
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="4.5" cy="6" r="1.6" fill="currentColor"/><circle cx="4.5" cy="12" r="1.6" fill="currentColor"/><circle cx="4.5" cy="18" r="1.6" fill="currentColor"/></svg>
+    برنامجي
+  </a>
+  <a href="#vote" data-s="vote">
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    صوّت
+  </a>
+</nav>
+
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prog=document.getElementById('prog'), bar=document.getElementById('bar'), dock=document.getElementById('dock');
+  var pl=document.getElementById('pl'), lastY=0, ticking=false, lastN=-1;
+
+  /* split the pledge into words for the scroll highlight */
+  var words=[];
+  (function(){
+    var text=pl.textContent.trim().split(/\s+/);
+    pl.textContent='';
+    text.forEach(function(t,i){
+      var s=document.createElement('span'); s.className='w'; s.textContent=t;
+      pl.appendChild(s); words.push(s);
+      if(i<text.length-1) pl.appendChild(document.createTextNode(' '));
+    });
+    if(!reduce) pl.classList.add('words');
+  })();
+
+  function updateWords(){
+    if(reduce) return;
+    var r=pl.getBoundingClientRect(), vh=window.innerHeight;
+    var p=(vh*0.85-r.top)/(r.height+vh*0.3);
+    var n=Math.round(Math.max(0,Math.min(1,p))*words.length);
+    if(n===lastN) return; lastN=n;
+    for(var i=0;i<words.length;i++) words[i].classList.toggle('lit',i<n);
+  }
+
+  function update(){
+    ticking=false;
+    var y=window.pageYOffset||root.scrollTop||0;
+    var max=Math.max(1,root.scrollHeight-window.innerHeight);
+    prog.style.transform='scaleX('+Math.min(1,y/max).toFixed(4)+')';
+    if(!reduce) root.style.setProperty('--sy',y.toFixed(1));
+    var d=y-lastY;
+    if(y>220&&d>8) bar.classList.add('hide'); else if(d<-8||y<220) bar.classList.remove('hide');
+    lastY=y;
+    dock.classList.toggle('show',y>360);
+    updateWords();
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  update();
+
+  /* reveal on scroll, both directions; only hides what is below the fold */
+  var els=[].slice.call(document.querySelectorAll('[data-r]'));
+  if(!reduce&&'IntersectionObserver' in window){
+    els.forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.top>window.innerHeight*0.92) el.classList.add('pre');
+    });
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ e.target.classList.toggle('pre',!e.isIntersecting); });
+    },{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  /* current section in the dock */
+  if('IntersectionObserver' in window){
+    var links={}; [].forEach.call(dock.querySelectorAll('a'),function(a){ links[a.getAttribute('data-s')]=a; });
+    var so=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          for(var k in links) links[k].classList.toggle('on',k===e.target.id);
+        }
+      });
+    },{rootMargin:'-45% 0px -45% 0px'});
+    ['about','plan','vote'].forEach(function(id){ var s=document.getElementById(id); if(s) so.observe(s); });
+  }
+
+  /* swipe rail: centre card grows, dots follow */
+  var rail=document.getElementById('rail'), cards=[].slice.call(rail.querySelectorAll('.fact')), dots=[].slice.call(document.querySelectorAll('#dots i'));
+  function railUpdate(){
+    var rc=rail.getBoundingClientRect(), c=rc.left+rc.width/2, best=0, bd=1e9;
+    cards.forEach(function(card,i){
+      var b=card.getBoundingClientRect(), dist=Math.abs((b.left+b.width/2)-c);
+      if(dist<bd){bd=dist;best=i;}
+      if(!reduce) card.style.setProperty('--s',(1-Math.min(0.1,dist/rc.width*0.18)).toFixed(3));
+    });
+    dots.forEach(function(d,i){ d.classList.toggle('on',i===best); });
+  }
+  rail.addEventListener('scroll',function(){ requestAnimationFrame(railUpdate); },{passive:true});
+  railUpdate();
+
+  /* ripple on buttons */
+  document.addEventListener('pointerdown',function(e){
+    var b=e.target.closest&&e.target.closest('.btn'); if(!b||reduce) return;
+    var r=b.getBoundingClientRect(), s=Math.max(r.width,r.height), el=document.createElement('span');
+    el.className='rip'; el.style.width=el.style.height=s+'px';
+    el.style.left=(e.clientX-r.left-s/2)+'px'; el.style.top=(e.clientY-r.top-s/2)+'px';
+    b.appendChild(el); setTimeout(function(){ el.remove(); },720);
+  });
+
+  /* ballot: tap to tick, with confetti */
+  var ballot=document.getElementById('ballot'), hint=document.getElementById('hint'), box=document.getElementById('confetti');
+  function burst(x,y){
+    if(reduce) return;
+    var cols=['#FFC93C','#FFFFFF','#0A2656','#7FB2FF'];
+    for(var i=0;i<34;i++){
+      var p=document.createElement('i'), a=Math.random()*Math.PI*2, v=120+Math.random()*220;
+      p.style.left=x+'px'; p.style.top=y+'px'; p.style.background=cols[i%cols.length];
+      p.style.width=p.style.height=(7+Math.random()*9)+'px';
+      box.appendChild(p);
+      var dx=Math.cos(a)*v, dy=Math.sin(a)*v-120;
+      var an=p.animate([
+        {transform:'translate(0,0) scale(1)',opacity:1},
+        {transform:'translate('+dx+'px,'+dy+'px) scale(1)',opacity:1,offset:.55},
+        {transform:'translate('+(dx*1.1)+'px,'+(dy+260)+'px) scale(.4)',opacity:0}
+      ],{duration:1100+Math.random()*500,easing:'cubic-bezier(.2,.7,.3,1)'});
+      an.onfinish=(function(n){ return function(){ n.remove(); }; })(p);
+    }
+  }
+  ballot.addEventListener('click',function(e){
+    var on=ballot.getAttribute('aria-pressed')!=='true';
+    ballot.setAttribute('aria-pressed',on?'true':'false');
+    hint.textContent=on?'تم، اختيارك صح':'اضغط وحط علامة الصح';
+    if(on){ var r=ballot.getBoundingClientRect(); burst(r.left+r.width*0.8,r.top+r.height/2); }
+  });
+})();
+</script>
+
+</body></html>
